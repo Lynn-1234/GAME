@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cp7roa0vvx0nh" path="res://character/Ghost/ghost03.png" id="5_2m2dn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_iqdyl"]
+resource_local_to_scene = true
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -22,7 +23,7 @@ animations = [{
 "texture": ExtResource("5_2m2dn")
 }],
 "loop": true,
-"name": &"default",
+"name": &"walk",
 "speed": 4.0
 }]
 
@@ -31,16 +32,18 @@ radius = 3.0
 height = 16.0
 
 [node name="Player" type="CharacterBody2D"]
+position = Vector2(2.08165e-12, 0)
+scale = Vector2(3, 3)
 script = ExtResource("1_2pujv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2.08165e-12, 0)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_iqdyl")
-frame = 3
-frame_progress = 0.435804
+animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, 15)
+position = Vector2(2.08165e-12, 15)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_yd6tl")
 
