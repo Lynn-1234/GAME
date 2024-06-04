@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://mf4u4odv0dlc"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_2pujv"]
+[ext_resource type="Texture2D" uid="uid://c7i5qd50kfy0u" path="res://character/Ghost/ghost00.png" id="2_2gnb1"]
+[ext_resource type="Texture2D" uid="uid://f18mscqru12h" path="res://character/Ghost/ghost01.png" id="3_b1vm0"]
+[ext_resource type="Texture2D" uid="uid://cghib445tshlv" path="res://character/Ghost/ghost02.png" id="4_dpefy"]
+[ext_resource type="Texture2D" uid="uid://cp7roa0vvx0nh" path="res://character/Ghost/ghost03.png" id="5_2m2dn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iqdyl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2gnb1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_b1vm0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dpefy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2m2dn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yd6tl"]
+radius = 3.0
+height = 16.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_2pujv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_iqdyl")
+frame = 3
+frame_progress = 0.435804
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 15)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_yd6tl")
+
+[node name="Camera2D" type="Camera2D" parent="."]
