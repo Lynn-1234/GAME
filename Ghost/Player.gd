@@ -11,7 +11,7 @@ func _physics_process(delta):
 	move_and_collide(velocity * delta)
 	
 	
-	if velocity.x != 0:
+	if velocity.x != 0 or velocity.y != 0:
 		$AnimatedSprite2D.animation = "walk"
 		$AnimatedSprite2D.flip_h = velocity.x < 0
 		$AnimatedSprite2D.play()
