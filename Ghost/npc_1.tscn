@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgo38idmdkxll"]
+
+[ext_resource type="Script" path="res://npc_1.gd" id="1_qirhu"]
+[ext_resource type="Texture2D" uid="uid://cdn30e2oae1ew" path="res://character/npc_1/npc_1.png" id="1_tjmch"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kbqc3"]
+radius = 119.004
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qbgrj"]
+size = Vector2(22, 28)
+
+[node name="npc_1" type="RigidBody2D"]
+position = Vector2(2800, 503)
+scale = Vector2(2, 2)
+script = ExtResource("1_qirhu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 0)
+scale = Vector2(3, 3)
+texture = ExtResource("1_tjmch")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(1, 0)
+scale = Vector2(2, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, 0)
+scale = Vector2(1.5, 1.5)
+shape = SubResource("CircleShape2D_kbqc3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 1)
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_qbgrj")

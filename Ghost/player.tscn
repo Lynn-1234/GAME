@@ -33,7 +33,6 @@ height = 16.0
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(2.08165e-12, 0)
-scale = Vector2(3, 3)
 script = ExtResource("1_2pujv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
