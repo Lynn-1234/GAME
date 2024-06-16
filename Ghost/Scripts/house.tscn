@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://dsofyx8lxy117"]
+
+[ext_resource type="Script" path="res://Scripts/house.gd" id="1_1pcfa"]
+[ext_resource type="Texture2D" uid="uid://c8kmtmc5pxv5o" path="res://map/house+map.png" id="1_2kmci"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n285p"]
+size = Vector2(78, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bcei2"]
+size = Vector2(29, 21)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bg7at"]
+radius = 25.0799
+
+[node name="House" type="StaticBody2D"]
+position = Vector2(8, -11)
+script = ExtResource("1_1pcfa")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, 0)
+texture = ExtResource("1_2kmci")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-8, 33)
+shape = SubResource("RectangleShape2D_n285p")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="door" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="door"]
+position = Vector2(-3.5, 54.5)
+shape = SubResource("RectangleShape2D_bcei2")
+debug_color = Color(0.964706, 0, 0.490196, 0.419608)
+
+[node name="PlayerPosition" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerPosition"]
+position = Vector2(-4, 70)
+shape = SubResource("CircleShape2D_bg7at")
+
+[connection signal="body_entered" from="door" to="." method="_on_door_body_entered"]
+[connection signal="body_entered" from="PlayerPosition" to="." method="_on_player_position_body_entered"]

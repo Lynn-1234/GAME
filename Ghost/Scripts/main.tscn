@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://dbbb44jekqb4x"]
+
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_56hi3"]
+[ext_resource type="PackedScene" uid="uid://mf4u4odv0dlc" path="res://Scripts/player.tscn" id="1_1747h"]
+[ext_resource type="PackedScene" uid="uid://b8we2e31fysbp" path="res://Scripts/tile_map.tscn" id="2_710vg"]
+[ext_resource type="PackedScene" uid="uid://dsofyx8lxy117" path="res://Scripts/house.tscn" id="3_qxf8a"]
+
+[node name="Main" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_56hi3")
+
+[node name="Player" parent="." instance=ExtResource("1_1747h")]
+position = Vector2(1730, 986)
+
+[node name="TileMap" parent="." instance=ExtResource("2_710vg")]
+z_index = -1
+y_sort_enabled = true
+
+[node name="House" parent="." instance=ExtResource("3_qxf8a")]
+position = Vector2(2794, 635)
+scale = Vector2(3, 3)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://mf4u4odv0dlc"]
 
-[ext_resource type="Script" path="res://Player.gd" id="1_2pujv"]
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_2pujv"]
 [ext_resource type="Texture2D" uid="uid://c7i5qd50kfy0u" path="res://character/Ghost/ghost00.png" id="2_2gnb1"]
 [ext_resource type="Texture2D" uid="uid://f18mscqru12h" path="res://character/Ghost/ghost01.png" id="3_b1vm0"]
 [ext_resource type="Texture2D" uid="uid://cghib445tshlv" path="res://character/Ghost/ghost02.png" id="4_dpefy"]
@@ -33,6 +33,7 @@ height = 16.0
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(2.08165e-12, 0)
+scale = Vector2(2, 2)
 script = ExtResource("1_2pujv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

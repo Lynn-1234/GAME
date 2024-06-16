@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bgo38idmdkxll"]
 
-[ext_resource type="Script" path="res://npc_1.gd" id="1_qirhu"]
+[ext_resource type="Script" path="res://Scripts/npc_1.gd" id="1_qirhu"]
 [ext_resource type="Texture2D" uid="uid://cdn30e2oae1ew" path="res://character/npc_1/npc_1.png" id="1_tjmch"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kbqc3"]
