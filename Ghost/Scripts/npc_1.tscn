@@ -1,36 +1,83 @@
-[gd_scene load_steps=5 format=3 uid="uid://bgo38idmdkxll"]
+[gd_scene load_steps=9 format=3 uid="uid://bgo38idmdkxll"]
 
 [ext_resource type="Script" path="res://Scripts/npc_1.gd" id="1_qirhu"]
-[ext_resource type="Texture2D" uid="uid://cdn30e2oae1ew" path="res://character/npc_1/npc_1.png" id="1_tjmch"]
+[ext_resource type="Texture2D" uid="uid://fa42476l0x4v" path="res://character/npc_chiaki/chiaki.png" id="2_w3kij"]
+[ext_resource type="Texture2D" uid="uid://bvh37r6v0o7jl" path="res://ico/PlaceHolder.png" id="3_c8dfp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kbqc3"]
-radius = 119.004
+radius = 55.1828
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qbgrj"]
-size = Vector2(22, 28)
+size = Vector2(22, 31)
 
-[node name="npc_1" type="RigidBody2D"]
-position = Vector2(2800, 503)
+[sub_resource type="Animation" id="Animation_2ftn2"]
+resource_name = "Default"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(2, -86), Vector2(2, -89), Vector2(2, -86), Vector2(2, -89)]
+}
+
+[sub_resource type="Animation" id="Animation_5ubjd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, -86)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gvjy2"]
+_data = {
+"Default": SubResource("Animation_2ftn2"),
+"RESET": SubResource("Animation_5ubjd")
+}
+
+[node name="npc_chiaki" type="CharacterBody2D"]
 scale = Vector2(2, 2)
 script = ExtResource("1_qirhu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1, 0)
-scale = Vector2(3, 3)
-texture = ExtResource("1_tjmch")
+scale = Vector2(4, 4)
+texture = ExtResource("2_w3kij")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(1, 0)
+[node name="ShowDialogue" type="Area2D" parent="."]
 scale = Vector2(2, 2)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1, 0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShowDialogue"]
 scale = Vector2(1.5, 1.5)
 shape = SubResource("CircleShape2D_kbqc3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 1)
+position = Vector2(1.5, -11)
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_qbgrj")
+
+[node name="IcoAn" type="AnimationPlayer" parent="."]
+root_node = NodePath("../IcoSp")
+libraries = {
+"": SubResource("AnimationLibrary_gvjy2")
+}
+
+[node name="IcoSp" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(2, -86)
+scale = Vector2(3, 3)
+texture = ExtResource("3_c8dfp")
+
+[connection signal="body_entered" from="ShowDialogue" to="." method="_on_show_dialogue_body_entered"]
+[connection signal="body_exited" from="ShowDialogue" to="." method="_on_show_dialogue_body_exited"]

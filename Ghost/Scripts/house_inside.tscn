@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://ffce4np846ju"]
+[gd_scene load_steps=7 format=3 uid="uid://ffce4np846ju"]
 
 [ext_resource type="Script" path="res://Scripts/house_inside.gd" id="1_mgkd1"]
 [ext_resource type="Texture2D" uid="uid://5mwonwmih8cc" path="res://map/house_inside.png" id="2_0xj2u"]
+[ext_resource type="PackedScene" uid="uid://bgo38idmdkxll" path="res://Scripts/npc_1.tscn" id="3_2fqxr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m01kq"]
 texture = ExtResource("2_0xj2u")
@@ -114,5 +115,9 @@ polygon = PackedVector2Array(-9, -1, -40, -40, 720, -39, 720, 480, 440, 481, 440
 
 [node name="table" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(281, 17, 280, 118, 294, 119, 295, 83, 403, 83, 403, 118, 417, 117, 416, 18)
+
+[node name="npc_chiaki" parent="." instance=ExtResource("3_2fqxr")]
+position = Vector2(524, 109)
+scale = Vector2(1, 1)
 
 [connection signal="body_entered" from="outside" to="." method="_on_outside_body_entered"]
