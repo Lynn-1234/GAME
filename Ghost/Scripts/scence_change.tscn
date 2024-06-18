@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqwqwfb48bfms"]
+
+[ext_resource type="Script" path="res://Scripts/scence_change.gd" id="1_yuf22"]
+
+[sub_resource type="Animation" id="Animation_w6x5n"]
+resource_name = "fadin"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_lnbcq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e5nb3"]
+_data = {
+"RESET": SubResource("Animation_lnbcq"),
+"fadin": SubResource("Animation_w6x5n")
+}
+
+[node name="ScenceManage" type="CanvasLayer"]
+script = ExtResource("1_yuf22")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1155.0
+offset_bottom = 705.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_e5nb3")
+}

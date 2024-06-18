@@ -20,14 +20,14 @@ func _process(delta):
 			pass
 	#move_and_slide()
 
+func _on_timeline_ended():
+	IsDialog = false
+
 func _on_show_dialogue_body_entered(body): 
 	if body.name == "Player": 
 		$IcoSp.visible= true
 		$IcoAn.play("Default")
 		IsDialog = true
-
-func _on_timeline_ended():
-	IsDialog = false
 
 func _on_show_dialogue_body_exited(body):
 	if body.name == "Player":

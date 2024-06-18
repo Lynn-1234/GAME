@@ -13,7 +13,9 @@ func _process(delta):
 
 func _on_door_body_entered(body):
 	if body.name == "Player":
-		get_tree().change_scene_to_file("res://Scripts/house_inside.tscn")
+		#get_tree().change_scene_to_file("res://Scripts/house_inside.tscn")
+		ScenceChange.switch_scene("res://Scripts/house_inside.tscn")
+
 
 
 func _on_player_position_body_entered(body):

@@ -12,12 +12,13 @@ func spawn_player():
 	player.global_position = $Marker2D.global_position
 	add_child(player)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-	#pass
+ #Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
 
 
 func _on_outside_body_entered(body):
 	if body.name == "Player": 
-		get_tree().change_scene_to_file("res://Scripts/main.tscn")
+		#get_tree().change_scene_to_file("res://Scripts/main.tscn")
+		ScenceChange.switch_scene("res://Scripts/main.tscn")
 	
