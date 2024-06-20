@@ -24,7 +24,7 @@ func _deferred_switch_scene(res_path):
 		
 	var scene = load(res_path)#载入新场景
 	current_scene = scene.instantiate()
-	get_tree().root.add_child(current_scene)#将场景添加到根目录	
+	get_tree().root.add_child(current_scene)#将场景添加到根目录
 	get_tree().current_scene = current_scene#当前场景设置为新的场景
 	
 	animation_player.play_backwards("fadin")

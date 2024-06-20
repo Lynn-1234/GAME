@@ -1,8 +1,46 @@
 NPC_chiaki_chara: ！！！
 Ghost_character: ！
-Ghost_character: 你好抱歉就这么闯进来了。
+Ghost_character: 你…能看见我？
+NPC_chiaki_chara: 嗯。
+Ghost_character: 抱歉就这么闯进来了。
 NPC_chiaki_chara: ……\
 …………没事
 Ghost_character: 请问你是？
 NPC_chiaki_chara: ……千秋
+NPC_chiaki_chara: 你怎么过来的？
+Ghost_character: 我……我记不清自己的名字了，一醒来就在这个城镇里，向别人搭话也没人能看见我，最后就晃到了这个小屋里。
+NPC_chiaki_chara: 原来如此，失忆吗……
+Ghost_character: ？你说什么？
+NPC_chiaki_chara: 没事，你刚才说其他人都看不见你是吗？
+Ghost_character: 嗯，你是第一个能跟我说话的人。
+NPC_chiaki_chara: 唔……这样就不好办了呢（小声）
+NPC_chiaki_chara: 我有办法可以让别人看见你，但是是暂时的，你要试试吗？
+Ghost_character: ！真的吗！！
+NPC_chiaki_chara: 真的。
+Ghost_character: 但是我这个样子，出去会吓到别人吧…
+NPC_chiaki_chara: 没关系，有人问你就说是万圣节彩排就好了。
+Ghost_character: ……
+Ghost_character: 话说现在是几号
+NPC_chiaki_chara: 3月6号
+Ghost_character: ？！那不是还有大半年吗！！！
+NPC_chiaki_chara: 哎呀没关系的，喝下这个药水就可以有实体了。
+Ghost_character: 要喝吗看起来不太靠谱的样子
+- 喝 [if {entity_} == ""]
+- 再想想 [if {entity_} == ""]
+if {entity_} == "喝":
+	Ghost_character: 算了管他呢！！
+	Ghost_character: （喝）
+	Ghost_character: ……
+	NPC_chiaki_chara: …………
+	Ghost_character: …………\
+	Ghost_character: 没什么特别的感觉呢
+	NPC_chiaki_chara: 哈哈，这样你应该就能被外面的人看到了！
+	NPC_chiaki_chara: 快去试试吧！
+	Ghost_character: ……\
+	Ghost_character: （怎么感觉被当成小白鼠了呢）
+elif {entity_} == "再想想":
+	算了吧……\
+感觉不是很靠谱的样子。
+	NPC_chiaki_chara: 那好吧……
+	你要是改主意了就来找我哦
 [end_timeline]

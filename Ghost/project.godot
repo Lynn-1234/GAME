@@ -17,8 +17,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 Globals="*res://Scripts/globals.gd"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 ScenceChange="*res://Scripts/scence_change.tscn"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
@@ -31,7 +31,9 @@ directories/dtl_directory={
 }
 layout/style_list=["res://Dialog/DefaultStyle.tres"]
 layout/default_style="res://Dialog/DefaultStyle.tres"
-variables={}
+variables={
+"entity_": ""
+}
 glossary/default_case_sensitive=true
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true
