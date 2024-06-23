@@ -33,14 +33,14 @@ if {entity_} == "喝":
 	Ghost_character: ……
 	NPC_chiaki_chara: …………
 	Ghost_character: …………\
-	Ghost_character: 没什么特别的感觉呢
+Ghost_character\: 没什么特别的感觉呢
 	NPC_chiaki_chara: 哈哈，这样你应该就能被外面的人看到了！
 	NPC_chiaki_chara: 快去试试吧！
 	Ghost_character: ……\
-	Ghost_character: （怎么感觉被当成小白鼠了呢）
+Ghost_character\: （怎么感觉被当成小白鼠了呢）
 elif {entity_} == "再想想":
-	算了吧……\
-感觉不是很靠谱的样子。
+	Ghost_character: 算了吧……\
+	感觉不是很靠谱的样子。
 	NPC_chiaki_chara: 那好吧……
-	你要是改主意了就来找我哦
+	NPC_chiaki_chara: 你要是改主意了就来找我哦
 [end_timeline]
