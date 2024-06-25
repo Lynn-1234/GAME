@@ -1,9 +1,9 @@
-NPC_chiaki_chara: ！！！
-Ghost_character: ！
-Ghost_character: 你…能看见我？
-NPC_chiaki_chara: 嗯。
-Ghost_character: 抱歉就这么闯进来了。
-NPC_chiaki_chara: ……\
+NPC_chiaki_chara (Chiaki): ！！！
+Ghost_character (Ghost): ！
+Ghost_character (Ghost): 你…能看见我？
+NPC_chiaki_chara (Chiaki): 嗯。
+Ghost_character (Ghost): 抱歉就这么闯进来了。
+NPC_chiaki_chara (Chiaki): ……\
 …………没事
 Ghost_character: 请问你是？
 NPC_chiaki_chara: ……千秋
@@ -25,22 +25,22 @@ NPC_chiaki_chara: 3月6号
 Ghost_character: ？！那不是还有大半年吗！！！
 NPC_chiaki_chara: 哎呀没关系的，喝下这个药水就可以有实体了。
 Ghost_character: 要喝吗看起来不太靠谱的样子
-- 喝 [if {entity_} == ""]
-- 再想想 [if {entity_} == ""]
-if {entity_} == "喝":
-	Ghost_character: 算了管他呢！！
-	Ghost_character: （喝）
-	Ghost_character: ……
-	NPC_chiaki_chara: …………
-	Ghost_character: …………\
-Ghost_character\: 没什么特别的感觉呢
-	NPC_chiaki_chara: 哈哈，这样你应该就能被外面的人看到了！
-	NPC_chiaki_chara: 快去试试吧！
-	Ghost_character: ……\
-Ghost_character\: （怎么感觉被当成小白鼠了呢）
-elif {entity_} == "再想想":
+- Y [if {entity_} == ""]
+- N [if {entity_} == ""]
+if {entity_} == "Y":
+	Ghost_character (Ghost): 算了管他呢！！
+	Ghost_character (Ghost): （喝）
+	Ghost_character (Ghost): ……
+	NPC_chiaki_chara (Chiaki): …………
+	Ghost_character (Ghost): ……
+	Ghost_character: 没什么特别的感觉呢
+	NPC_chiaki_chara (Chiaki): 快去试试吧！
+	NPC_chiaki_chara (Chiaki): 哈哈，这样你应该就能被外面的人看到了！
+	Ghost_character (Ghost): ……
+	Ghost_character: （怎么感觉被当成小白鼠了呢）
+elif {entity_} == "N":
 	Ghost_character: 算了吧……\
-	感觉不是很靠谱的样子。
+感觉不是很靠谱的样子。
 	NPC_chiaki_chara: 那好吧……
 	NPC_chiaki_chara: 你要是改主意了就来找我哦
 [end_timeline]

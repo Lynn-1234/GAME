@@ -7,7 +7,9 @@ func _ready():
 	if Globals.last_Player:
 		player.global_position = Globals.last_Player
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+
 	pass
+	
+

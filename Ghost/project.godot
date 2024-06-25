@@ -27,7 +27,8 @@ directories/dch_directory={
 "NPC_chiaki_chara": "res://Dialog/NPC_chiaki_chara.dch"
 }
 directories/dtl_directory={
-"NPC_chiaki_timeline": "res://Dialog/NPC_chiaki_timeline.dtl"
+"NPC_chiaki_timeline": "res://Dialog/NPC_chiaki_timeline.dtl",
+"first_timeline": "res://Dialog/first_timeline.dtl"
 }
 layout/style_list=["res://Dialog/DefaultStyle.tres"]
 layout/default_style="res://Dialog/DefaultStyle.tres"

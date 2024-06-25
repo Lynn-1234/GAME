@@ -44,6 +44,7 @@ ignore_texture_size = true
 stretch_mode = 0
 
 [node name="QuiteButton" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 650.0
 offset_top = 394.0
 offset_right = 888.0
