@@ -26,8 +26,6 @@ Ghost_character: ？！那不是还有大半年吗！！！
 NPC_chiaki_chara: 哎呀没关系的，喝下这个药水就可以有实体了。
 Ghost_character: 要喝吗看起来不太靠谱的样子
 - Y [if {entity_} == ""]
-- N [if {entity_} == ""]
-if {entity_} == "Y":
 	Ghost_character (Ghost): 算了管他呢！！
 	Ghost_character (Ghost): （喝）
 	Ghost_character (Ghost): ……
@@ -38,9 +36,9 @@ if {entity_} == "Y":
 	NPC_chiaki_chara (Chiaki): 哈哈，这样你应该就能被外面的人看到了！
 	Ghost_character (Ghost): ……
 	Ghost_character: （怎么感觉被当成小白鼠了呢）
-elif {entity_} == "N":
-	Ghost_character: 算了吧……\
-感觉不是很靠谱的样子。
+- N [if {entity_} == ""]
+	Ghost_character: 算了吧……
+	Ghost_character: 感觉不是很靠谱的样子。
 	NPC_chiaki_chara: 那好吧……
 	NPC_chiaki_chara: 你要是改主意了就来找我哦
 [end_timeline]
