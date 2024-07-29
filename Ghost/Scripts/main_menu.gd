@@ -15,7 +15,7 @@ func _process(delta):
 func _on_start_button_pressed():
 	#var main_scene = load("res://Scripts/main.tscn")
 	#get_tree().change_scene_to_file("res://Scripts/main.tscn")
-	ScenceChange.switch_scene("res://Scripts/main.tscn")
+	ScenceChange.switch_scene("res://Scripts/intro.tscn")
 
 
 func _on_quite_button_pressed():

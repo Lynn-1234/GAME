@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://caq8d5xi5qc20"
+
+[deps]
+
+files=["res://Dialog/translation/dialogic_NPC_chiaki_timeline_translation.ch.translation"]
+
+source_file="res://Dialog/translation/dialogic_NPC_chiaki_timeline_translation.csv"
+dest_files=["res://Dialog/translation/dialogic_NPC_chiaki_timeline_translation.ch.translation"]
+
+[params]
+
+compress=true
+delimiter=0

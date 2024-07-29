@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://fi7l3s3eywpb"]
+
+[ext_resource type="Script" path="res://Scripts/intro.gd" id="1_ewm2d"]
+[ext_resource type="Texture2D" uid="uid://dyu574bsfh4nb" path="res://WelcomeScreen/intro.png" id="2_l02u6"]
+
+[node name="intro" type="Node2D"]
+script = ExtResource("1_ewm2d")
+
+[node name="Intro" type="Sprite2D" parent="."]
+position = Vector2(577.5, 325.938)
+scale = Vector2(0.357706, 0.364291)
+texture = ExtResource("2_l02u6")

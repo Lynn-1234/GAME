@@ -1,44 +1,44 @@
-NPC_chiaki_chara (Chiaki): ！！！
-Ghost_character (Ghost): ！
-Ghost_character (Ghost): 你…能看见我？
-NPC_chiaki_chara (Chiaki): 嗯。
-Ghost_character (Ghost): 抱歉就这么闯进来了。
+NPC_chiaki_chara (Chiaki): ！！！ #id:13
+Ghost_character (Ghost): ！ #id:14
+Ghost_character (Ghost): 你…能看见我？ #id:15
+NPC_chiaki_chara (Chiaki): 嗯。 #id:16
+Ghost_character (Ghost): 抱歉就这么闯进来了。 #id:17
 NPC_chiaki_chara (Chiaki): ……\
-…………没事
-Ghost_character: 请问你是？
-NPC_chiaki_chara: ……千秋
-NPC_chiaki_chara: 你怎么过来的？
-Ghost_character: 我……我记不清自己的名字了，一醒来就在这个城镇里，向别人搭话也没人能看见我，最后就晃到了这个小屋里。
-NPC_chiaki_chara: 原来如此，失忆吗……
-Ghost_character: ？你说什么？
-NPC_chiaki_chara: 没事，你刚才说其他人都看不见你是吗？
-Ghost_character: 嗯，你是第一个能跟我说话的人。
-NPC_chiaki_chara: 唔……这样就不好办了呢（小声）
-NPC_chiaki_chara: 我有办法可以让别人看见你，但是是暂时的，你要试试吗？
-Ghost_character: ！真的吗！！
-NPC_chiaki_chara: 真的。
-Ghost_character: 但是我这个样子，出去会吓到别人吧…
-NPC_chiaki_chara: 没关系，有人问你就说是万圣节彩排就好了。
-Ghost_character: ……
-Ghost_character: 话说现在是几号
-NPC_chiaki_chara: 3月6号
-Ghost_character: ？！那不是还有大半年吗！！！
-NPC_chiaki_chara: 哎呀没关系的，喝下这个药水就可以有实体了。
-Ghost_character: 要喝吗看起来不太靠谱的样子
-- Y [if {entity_} == ""]
-	Ghost_character (Ghost): 算了管他呢！！
-	Ghost_character (Ghost): （喝）
-	Ghost_character (Ghost): ……
-	NPC_chiaki_chara (Chiaki): …………
-	Ghost_character (Ghost): ……
-	Ghost_character: 没什么特别的感觉呢
-	NPC_chiaki_chara (Chiaki): 快去试试吧！
-	NPC_chiaki_chara (Chiaki): 哈哈，这样你应该就能被外面的人看到了！
-	Ghost_character (Ghost): ……
-	Ghost_character: （怎么感觉被当成小白鼠了呢）
-- N [if {entity_} == ""]
-	Ghost_character: 算了吧……
-	Ghost_character: 感觉不是很靠谱的样子。
-	NPC_chiaki_chara: 那好吧……
-	NPC_chiaki_chara: 你要是改主意了就来找我哦
+…………没事 #id:18
+Ghost_character: 请问你是？ #id:19
+NPC_chiaki_chara: ……千秋 #id:1a
+NPC_chiaki_chara: 你怎么过来的？ #id:1b
+Ghost_character: 我……我记不清自己的名字了，一醒来就在这个城镇里，向别人搭话也没人能看见我，最后就晃到了这个小屋里。 #id:1c
+NPC_chiaki_chara: 原来如此，失忆吗…… #id:1d
+Ghost_character: ？你说什么？ #id:1e
+NPC_chiaki_chara: 没事，你刚才说其他人都看不见你是吗？ #id:1f
+Ghost_character: 嗯，你是第一个能跟我说话的人。 #id:20
+NPC_chiaki_chara: 唔……这样就不好办了呢（小声） #id:21
+NPC_chiaki_chara: 我有办法可以让别人看见你，但是是暂时的，你要试试吗？ #id:22
+Ghost_character: ！真的吗！！ #id:23
+NPC_chiaki_chara: 真的。 #id:24
+Ghost_character: 但是我这个样子，出去会吓到别人吧… #id:25
+NPC_chiaki_chara: 没关系，有人问你就说是万圣节彩排就好了。 #id:26
+Ghost_character: …… #id:27
+Ghost_character: 话说现在是几号 #id:28
+NPC_chiaki_chara: 3月6号 #id:29
+Ghost_character: ？！那不是还有大半年吗！！！ #id:2a
+NPC_chiaki_chara: 哎呀没关系的，喝下这个药水就可以有实体了。 #id:2b
+Ghost_character: 要喝吗看起来不太靠谱的样子 #id:2c
+- Y [if {entity_} == ""] #id:2d
+	Ghost_character (Ghost): 算了管他呢！！ #id:2e
+	Ghost_character (Ghost): （喝） #id:2f
+	Ghost_character (Ghost): …… #id:30
+	NPC_chiaki_chara (Chiaki): ………… #id:31
+	Ghost_character (Ghost): …… #id:32
+	Ghost_character: 没什么特别的感觉呢 #id:33
+	NPC_chiaki_chara (Chiaki): 快去试试吧！ #id:34
+	NPC_chiaki_chara (Chiaki): 哈哈，这样你应该就能被外面的人看到了！ #id:35
+	Ghost_character (Ghost): …… #id:36
+	Ghost_character: （怎么感觉被当成小白鼠了呢） #id:37
+- N [if {entity_} == ""] #id:38
+	Ghost_character: 算了吧…… #id:39
+	Ghost_character: 感觉不是很靠谱的样子。 #id:3a
+	NPC_chiaki_chara: 那好吧…… #id:3b
+	NPC_chiaki_chara: 你要是改主意了就来找我哦 #id:3c
 [end_timeline]

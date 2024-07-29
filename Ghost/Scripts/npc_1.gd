@@ -1,6 +1,7 @@
 extends CharacterBody2D
 @export var playerPosition:CharacterBody2D
 var IsDialog = false
+ 
 
 
 # Called when the node enters the scene tree for the first time.
@@ -10,6 +11,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	
 	if IsDialog:
 		if Input.is_action_just_pressed("dialogic_default_action"):
 			if Dialogic.current_timeline != null:
@@ -24,10 +26,12 @@ func _on_timeline_ended():
 	IsDialog = false
 
 func _on_show_dialogue_body_entered(body): 
-	if body.name == "Player": 
-		$IcoSp.visible= true
-		$IcoAn.play("Default")
-		IsDialog = true
+
+		if body.name == "Player": 
+			$IcoSp.visible= true
+			$IcoAn.play("Default")
+			IsDialog = true
+	
 
 func _on_show_dialogue_body_exited(body):
 	if body.name == "Player":
