@@ -1,7 +1,7 @@
 extends CharacterBody2D
 @export var playerPosition:CharacterBody2D
 var IsDialog = false
- 
+
 
 
 # Called when the node enters the scene tree for the first time.
@@ -21,16 +21,18 @@ func _process(delta):
 			get_viewport().set_input_as_handled()
 			pass
 	#move_and_slide()
+	else : 
+		$IcoSp.visible = false
+		
 
 func _on_timeline_ended():
 	IsDialog = false
 
 func _on_show_dialogue_body_entered(body): 
-
-		if body.name == "Player": 
-			$IcoSp.visible= true
-			$IcoAn.play("Default")
-			IsDialog = true
+	if body.name == "Player": 
+		$IcoSp.visible= true
+		$IcoAn.play("Default")
+		IsDialog = true
 	
 
 func _on_show_dialogue_body_exited(body):

@@ -1,0 +1,11 @@
+NPC_a: Did you hear?
+NPC_a: That ghost has been seen again. It really gives me the creeps.
+NPC_b: Yeah, a freak like that wandering around, who knows what it's up to.
+NPC_a: If I were it, I'd just vanish and stop scaring people...
+NPC_a: But I heard there's some weirdo trying to help it recover its memories?
+NPC_c: Are you talking about that weirdo, the detective who lives in the small cabin in the southeast of town?
+NPC_b: He’s always dealing with these freaky things. I just don’t get what’s going through his head.
+NPC_c: Who knows what other creepy stuff he's hiding in that cabin? I just wish they’d all stay far away from us.
+[wait_input]
+Ghost_character: "the cabin in the southeast"
+Ghost_character: Maybe I should try my luck there.

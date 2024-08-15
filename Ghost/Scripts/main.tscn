@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbbb44jekqb4x"]
+[gd_scene load_steps=6 format=3 uid="uid://dbbb44jekqb4x"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_56hi3"]
 [ext_resource type="PackedScene" uid="uid://mf4u4odv0dlc" path="res://Scripts/player.tscn" id="1_1747h"]
 [ext_resource type="PackedScene" uid="uid://b8we2e31fysbp" path="res://Scripts/tile_map.tscn" id="2_710vg"]
 [ext_resource type="PackedScene" uid="uid://dsofyx8lxy117" path="res://Scripts/house.tscn" id="3_qxf8a"]
+[ext_resource type="PackedScene" uid="uid://b18mxbd4hiiyv" path="res://Scripts/npc_2.tscn" id="5_dof7s"]
 
 [node name="Main" type="Node2D"]
 y_sort_enabled = true
@@ -17,5 +18,9 @@ z_index = -1
 y_sort_enabled = true
 
 [node name="House" parent="." instance=ExtResource("3_qxf8a")]
-position = Vector2(2794, 635)
+position = Vector2(2541, 1627)
 scale = Vector2(3, 3)
+
+[node name="npc_2" parent="." instance=ExtResource("5_dof7s")]
+position = Vector2(1504, 901)
+scale = Vector2(2, 2)

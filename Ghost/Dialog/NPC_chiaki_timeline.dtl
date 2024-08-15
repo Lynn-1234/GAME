@@ -1,44 +1,36 @@
-NPC_chiaki_chara (Chiaki): ！！！ #id:13
-Ghost_character (Ghost): ！ #id:14
-Ghost_character (Ghost): 你…能看见我？ #id:15
-NPC_chiaki_chara (Chiaki): 嗯。 #id:16
-Ghost_character (Ghost): 抱歉就这么闯进来了。 #id:17
-NPC_chiaki_chara (Chiaki): ……\
-…………没事 #id:18
-Ghost_character: 请问你是？ #id:19
-NPC_chiaki_chara: ……千秋 #id:1a
-NPC_chiaki_chara: 你怎么过来的？ #id:1b
-Ghost_character: 我……我记不清自己的名字了，一醒来就在这个城镇里，向别人搭话也没人能看见我，最后就晃到了这个小屋里。 #id:1c
-NPC_chiaki_chara: 原来如此，失忆吗…… #id:1d
-Ghost_character: ？你说什么？ #id:1e
-NPC_chiaki_chara: 没事，你刚才说其他人都看不见你是吗？ #id:1f
-Ghost_character: 嗯，你是第一个能跟我说话的人。 #id:20
-NPC_chiaki_chara: 唔……这样就不好办了呢（小声） #id:21
-NPC_chiaki_chara: 我有办法可以让别人看见你，但是是暂时的，你要试试吗？ #id:22
-Ghost_character: ！真的吗！！ #id:23
-NPC_chiaki_chara: 真的。 #id:24
-Ghost_character: 但是我这个样子，出去会吓到别人吧… #id:25
-NPC_chiaki_chara: 没关系，有人问你就说是万圣节彩排就好了。 #id:26
-Ghost_character: …… #id:27
-Ghost_character: 话说现在是几号 #id:28
-NPC_chiaki_chara: 3月6号 #id:29
-Ghost_character: ？！那不是还有大半年吗！！！ #id:2a
-NPC_chiaki_chara: 哎呀没关系的，喝下这个药水就可以有实体了。 #id:2b
-Ghost_character: 要喝吗看起来不太靠谱的样子 #id:2c
-- Y [if {entity_} == ""] #id:2d
-	Ghost_character (Ghost): 算了管他呢！！ #id:2e
-	Ghost_character (Ghost): （喝） #id:2f
-	Ghost_character (Ghost): …… #id:30
-	NPC_chiaki_chara (Chiaki): ………… #id:31
-	Ghost_character (Ghost): …… #id:32
-	Ghost_character: 没什么特别的感觉呢 #id:33
-	NPC_chiaki_chara (Chiaki): 快去试试吧！ #id:34
-	NPC_chiaki_chara (Chiaki): 哈哈，这样你应该就能被外面的人看到了！ #id:35
-	Ghost_character (Ghost): …… #id:36
-	Ghost_character: （怎么感觉被当成小白鼠了呢） #id:37
-- N [if {entity_} == ""] #id:38
-	Ghost_character: 算了吧…… #id:39
-	Ghost_character: 感觉不是很靠谱的样子。 #id:3a
-	NPC_chiaki_chara: 那好吧…… #id:3b
-	NPC_chiaki_chara: 你要是改主意了就来找我哦 #id:3c
+NPC_chiaki_chara (Chiaki): You’ve finally arrived. I’ve been expecting you. #id:13
+Ghost_character (Ghost): Are you the detective who can help me recover my memories? #id:14
+NPC_chiaki_chara (Ghost): Yes, I’m the detective.
+NPC_chiaki_chara: I know you’re feeling lost right now, but I’ll do everything I can to help you. #id:15
+Ghost_character (Chiaki): Thank you.
+Ghost_character: The villagers said you have a way to make me visible to them? #id:16
+NPC_chiaki_chara (Ghost): That’s right.
+NPC_chiaki_chara: I have a magical potion that can make your presence visible to the living. #id:17
+NPC_chiaki_chara (Chiaki): This way, you can interact with them and find more clues about your past. #id:18
+Ghost_character: That’s wonderful! What do I need to do? #id:19
+NPC_chiaki_chara: (pulling out a bottle of potion and handing it to the ghost) #id:1a
+NPC_chiaki_chara: Drink this potion. It will stabilize your soul and allow people to see you. #id:1b
+Ghost_character: Will this really work? #id:1c
+NPC_chiaki_chara: I promise, it will let you rejoin this world. #id:1d
+- Drink the potion [if {choice} == "y"]
+	Ghost_character: I feel different, like I’m more… real #id:1f
+	NPC_chiaki_chara: Cool. Now, you’ll be visible to everyone. #id:20
+	NPC_chiaki_chara: You can go into town, talk to people, and search for your past. #id:21
+	Ghost_character: Amazing! I can finally find out who I am! #id:22
+	NPC_chiaki_chara: Remember, some of your memories might be painful. #id:23
+	NPC_chiaki_chara: But facing them is a crucial step in discovering who you really are. #id:24
+	Ghost_character: I understand. No matter how painful, I need to find my memories. #id:25
+	NPC_chiaki_chara: Then go ahead. I’ll be here if you ever need help. #id:3c
+- Do not drink the potion [if {entity_} == "n"]
+	NPC_chiaki_chara: Well... I have no choice. This is the only way to continue... #id:1e
+	- Drink the potion [if {entity_} == "n"]
+		Ghost_character: I feel different, like I’m more… real #id:1f
+		NPC_chiaki_chara: Cool. Now, you’ll be visible to everyone. #id:20
+		NPC_chiaki_chara: You can go into town, talk to people, and search for your past. #id:21
+		Ghost_character: Amazing! I can finally find out who I am! #id:22
+		NPC_chiaki_chara: Remember, some of your memories might be painful. #id:23
+		NPC_chiaki_chara: But facing them is a crucial step in discovering who you really are. #id:24
+		Ghost_character: I understand. No matter how painful, I need to find my memories. #id:25
+		NPC_chiaki_chara: Then go ahead. I’ll be here if you ever need help. #id:3c
+
 [end_timeline]

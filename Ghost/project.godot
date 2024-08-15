@@ -24,17 +24,22 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 directories/dch_directory={
 "Ghost_character": "res://Dialog/Ghost_character.dch",
-"NPC_chiaki_chara": "res://Dialog/NPC_chiaki_chara.dch"
+"NPC_a": "res://Dialog/NPC_a.dch",
+"NPC_b": "res://character/NPC/NPC_b.dch",
+"NPC_c": "res://character/NPC/NPC_c.dch",
+"NPC_chiaki_chara": "res://Dialog/NPC_chiaki_chara.dch",
+"NPC_d": "res://character/NPC/NPC_d.dch"
 }
 directories/dtl_directory={
+"NPC_2_timeline": "res://Dialog/NPC_2_timeline.dtl",
 "NPC_chiaki_timeline": "res://Dialog/NPC_chiaki_timeline.dtl",
-"first_timeline": "res://Dialog/first_timeline.dtl",
-"timeline": "res://Dialog/timeline.dtl"
+"first_timeline": "res://Dialog/first_timeline.dtl"
 }
-layout/style_list=["res://Dialog/DefaultStyle.tres"]
+layout/style_list=["res://Dialog/DefaultStyle.tres", "res://right.tres"]
 layout/default_style="res://Dialog/DefaultStyle.tres"
 variables={
-"entity_": ""
+"choice": "y",
+"entity_": "n"
 }
 glossary/default_case_sensitive=true
 text/letter_speed=0.01
