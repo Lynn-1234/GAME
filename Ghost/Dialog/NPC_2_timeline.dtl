@@ -9,3 +9,5 @@ NPC_c: Who knows what other creepy stuff he's hiding in that cabin? I just wish 
 [wait_input]
 Ghost_character: "the cabin in the southeast"
 Ghost_character: Maybe I should try my luck there.
+set {task} = "Find the cabin ( southeast )"
+[signal arg="activate_something"]

@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://mf4u4odv0dlc"]
+[gd_scene load_steps=11 format=3 uid="uid://mf4u4odv0dlc"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_2pujv"]
 [ext_resource type="Texture2D" uid="uid://c7i5qd50kfy0u" path="res://character/Ghost/ghost00.png" id="2_2gnb1"]
 [ext_resource type="Texture2D" uid="uid://f18mscqru12h" path="res://character/Ghost/ghost01.png" id="3_b1vm0"]
 [ext_resource type="Texture2D" uid="uid://cghib445tshlv" path="res://character/Ghost/ghost02.png" id="4_dpefy"]
 [ext_resource type="Texture2D" uid="uid://cp7roa0vvx0nh" path="res://character/Ghost/ghost03.png" id="5_2m2dn"]
+[ext_resource type="FontFile" uid="uid://6tmaq1sdhrxf" path="res://Fonts/Anton-Regular.ttf" id="7_lwht4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_iqdyl"]
 resource_local_to_scene = true
@@ -31,6 +32,36 @@ animations = [{
 radius = 3.0
 height = 16.0
 
+[sub_resource type="GDScript" id="GDScript_0pgkf"]
+script/source = "extends CanvasLayer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	Dialogic.signal_event.connect(_on_dialogic_signal)
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+func show_message():
+	_on_dialogic_signal(\"activate_something\")
+
+
+func _on_dialogic_signal(argument:String):
+	if argument == \"activate_something\":
+		$Message.text = Dialogic.VAR.task
+		$Message.show()
+
+
+"
+
+[sub_resource type="LabelSettings" id="LabelSettings_lwuff"]
+font = ExtResource("7_lwht4")
+font_size = 20
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(2.08165e-12, 0)
 scale = Vector2(2, 2)
@@ -48,3 +79,15 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_yd6tl")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="HUD" type="CanvasLayer" parent="."]
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
+script = SubResource("GDScript_0pgkf")
+
+[node name="Message" type="Label" parent="HUD"]
+offset_bottom = 31.0
+text = "
+"
+label_settings = SubResource("LabelSettings_lwuff")
+metadata/_edit_use_anchors_ = true

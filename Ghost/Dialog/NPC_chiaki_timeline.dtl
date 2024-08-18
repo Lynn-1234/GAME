@@ -1,12 +1,12 @@
-NPC_chiaki_chara (Chiaki): You’ve finally arrived. I’ve been expecting you. #id:13
-Ghost_character (Ghost): Are you the detective who can help me recover my memories? #id:14
-NPC_chiaki_chara (Ghost): Yes, I’m the detective.
+NPC_chiaki_chara: You’ve finally arrived. I’ve been expecting you. #id:13
+Ghost_character: Are you the detective who can help me recover my memories? #id:14
 NPC_chiaki_chara: I know you’re feeling lost right now, but I’ll do everything I can to help you. #id:15
-Ghost_character (Chiaki): Thank you.
+Ghost_character: Thank you.
 Ghost_character: The villagers said you have a way to make me visible to them? #id:16
-NPC_chiaki_chara (Ghost): That’s right.
+NPC_chiaki_chara: That’s right.
 NPC_chiaki_chara: I have a magical potion that can make your presence visible to the living. #id:17
-NPC_chiaki_chara (Chiaki): This way, you can interact with them and find more clues about your past. #id:18
+NPC_chiaki_chara: Yes, I’m the detective.
+NPC_chiaki_chara: This way, you can interact with them and find more clues about your past. #id:18
 Ghost_character: That’s wonderful! What do I need to do? #id:19
 NPC_chiaki_chara: (pulling out a bottle of potion and handing it to the ghost) #id:1a
 NPC_chiaki_chara: Drink this potion. It will stabilize your soul and allow people to see you. #id:1b
@@ -22,7 +22,8 @@ NPC_chiaki_chara: I promise, it will let you rejoin this world. #id:1d
 	Ghost_character: I understand. No matter how painful, I need to find my memories. #id:25
 	NPC_chiaki_chara: Then go ahead. I’ll be here if you ever need help. #id:3c
 - Do not drink the potion [if {entity_} == "n"]
-	NPC_chiaki_chara: Well... I have no choice. This is the only way to continue... #id:1e
+	Ghost_character: Well... I have no choice. This is the only way to continue...\
+ #id:1e
 	- Drink the potion [if {entity_} == "n"]
 		Ghost_character: I feel different, like I’m more… real #id:1f
 		NPC_chiaki_chara: Cool. Now, you’ll be visible to everyone. #id:20
@@ -32,5 +33,7 @@ NPC_chiaki_chara: I promise, it will let you rejoin this world. #id:1d
 		NPC_chiaki_chara: But facing them is a crucial step in discovering who you really are. #id:24
 		Ghost_character: I understand. No matter how painful, I need to find my memories. #id:25
 		NPC_chiaki_chara: Then go ahead. I’ll be here if you ever need help. #id:3c
+set {task} = "To Be Continue…"
+[signal arg="activate_something"]
 
 [end_timeline]

@@ -39,7 +39,8 @@ layout/style_list=["res://Dialog/DefaultStyle.tres", "res://right.tres"]
 layout/default_style="res://Dialog/DefaultStyle.tres"
 variables={
 "choice": "y",
-"entity_": "n"
+"entity_": "n",
+"task": ""
 }
 glossary/default_case_sensitive=true
 text/letter_speed=0.01

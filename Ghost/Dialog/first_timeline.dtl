@@ -1,4 +1,5 @@
 Ghost_character (Ghost): Where am I…… #id:11
 ……
-Ghost_character (Ghost): <Empty Text Event> #id:12
+set {task} = "Walking around! "
+[signal arg="activate_something"]
 [end_timeline]

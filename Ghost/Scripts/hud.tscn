@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5f3dhmg477o7"]
+
+[ext_resource type="Script" path="res://Scripts/HUD.gd" id="1_nxqtx"]
+[ext_resource type="FontFile" uid="uid://6tmaq1sdhrxf" path="res://Fonts/Anton-Regular.ttf" id="2_y5584"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5ajfw"]
+font = ExtResource("2_y5584")
+font_size = 20
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[node name="HUD" type="CanvasLayer"]
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
+script = ExtResource("1_nxqtx")
+
+[node name="Message2" type="Label" parent="."]
+offset_bottom = 31.0
+text = "
+"
+label_settings = SubResource("LabelSettings_5ajfw")
+metadata/_edit_use_anchors_ = true

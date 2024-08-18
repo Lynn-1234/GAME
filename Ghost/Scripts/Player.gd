@@ -20,6 +20,8 @@ func _physics_process(delta):
 		$AnimatedSprite2D.stop()
 		
 	move_and_slide() 
+	
+	$HUD.show_message()
 
 func _process(delta):
 	pass
