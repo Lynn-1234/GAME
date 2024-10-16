@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dkrfnlyouk8ow" path="res://WelcomeScreen/StartButton.PNG" id="1_j4kib"]
 [ext_resource type="Texture2D" uid="uid://y7omcn24jrll" path="res://WelcomeScreen/Background.PNG" id="1_x82g2"]
 [ext_resource type="Texture2D" uid="uid://d3owp4tah58sr" path="res://WelcomeScreen/Ver.PNG" id="3_q3gww"]
-[ext_resource type="Texture2D" uid="uid://ckotg422wutad" path="res://WelcomeScreen/Quite.PNG" id="4_ovywd"]
+[ext_resource type="Texture2D" uid="uid://bsl228qldftgl" path="res://settingpage/quit.PNG" id="6_5kqek"]
 
 [node name="main_menu" type="Control"]
 layout_mode = 3
@@ -43,15 +43,15 @@ texture_normal = ExtResource("1_j4kib")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="QuiteButton" type="TextureButton" parent="."]
+[node name="QuitButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 650.0
+offset_left = 683.0
 offset_top = 394.0
-offset_right = 888.0
-offset_bottom = 471.0
-texture_normal = ExtResource("4_ovywd")
+offset_right = 870.0
+offset_bottom = 474.0
+texture_normal = ExtResource("6_5kqek")
 ignore_texture_size = true
 stretch_mode = 0
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="QuiteButton" to="." method="_on_quite_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

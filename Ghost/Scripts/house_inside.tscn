@@ -81,7 +81,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_m01kq")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4a610"]
-size = Vector2(119, 33)
+size = Vector2(155.5, 52.5)
 
 [node name="house_inside" type="Node2D"]
 script = ExtResource("1_mgkd1")
@@ -105,7 +105,7 @@ position = Vector2(336, 283)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="outside"]
 z_as_relative = false
-position = Vector2(340.5, 542.5)
+position = Vector2(342.25, 552.75)
 shape = SubResource("RectangleShape2D_4a610")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]

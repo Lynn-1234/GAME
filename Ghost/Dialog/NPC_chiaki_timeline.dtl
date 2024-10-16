@@ -1,30 +1,19 @@
-NPC_chiaki_chara: You’ve finally arrived. I’ve been expecting you. #id:13
-Ghost_character: Are you the detective who can help me recover my memories? #id:14
-NPC_chiaki_chara: I know you’re feeling lost right now, but I’ll do everything I can to help you. #id:15
-Ghost_character: Thank you.
-Ghost_character: The villagers said you have a way to make me visible to them? #id:16
-NPC_chiaki_chara: That’s right.
-NPC_chiaki_chara: I have a magical potion that can make your presence visible to the living. #id:17
-NPC_chiaki_chara: Yes, I’m the detective.
-NPC_chiaki_chara: This way, you can interact with them and find more clues about your past. #id:18
-Ghost_character: That’s wonderful! What do I need to do? #id:19
-NPC_chiaki_chara: (pulling out a bottle of potion and handing it to the ghost) #id:1a
-NPC_chiaki_chara: Drink this potion. It will stabilize your soul and allow people to see you. #id:1b
-Ghost_character: Will this really work? #id:1c
-NPC_chiaki_chara: I promise, it will let you rejoin this world. #id:1d
-- Drink the potion [if {choice} == "y"]
-	Ghost_character: I feel different, like I’m more… real #id:1f
-	NPC_chiaki_chara: Cool. Now, you’ll be visible to everyone. #id:20
-	NPC_chiaki_chara: You can go into town, talk to people, and search for your past. #id:21
-	Ghost_character: Amazing! I can finally find out who I am! #id:22
-	NPC_chiaki_chara: Remember, some of your memories might be painful. #id:23
-	NPC_chiaki_chara: But facing them is a crucial step in discovering who you really are. #id:24
-	Ghost_character: I understand. No matter how painful, I need to find my memories. #id:25
-	NPC_chiaki_chara: Then go ahead. I’ll be here if you ever need help. #id:3c
-- Do not drink the potion [if {entity_} == "n"]
-	Ghost_character: Well... I have no choice. This is the only way to continue...\
- #id:1e
-	- Drink the potion [if {entity_} == "n"]
+if {conv_chiaki} == 0:
+	NPC_chiaki_chara: You’ve finally arrived. I’ve been expecting you. #id:13
+	Ghost_character: Are you the detective who can help me recover my memories? #id:14
+	NPC_chiaki_chara: I know you’re feeling lost right now, but I’ll do everything I can to help you. #id:15
+	Ghost_character: Thank you.
+	Ghost_character: The villagers said you have a way to make me visible to them? #id:16
+	NPC_chiaki_chara: That’s right.
+	NPC_chiaki_chara: I have a magical potion that can make your presence visible to the living. #id:17
+	NPC_chiaki_chara: Yes, I’m the detective.
+	NPC_chiaki_chara: This way, you can interact with them and find more clues about your past. #id:18
+	Ghost_character: That’s wonderful! What do I need to do? #id:19
+	NPC_chiaki_chara: (pulling out a bottle of potion and handing it to the ghost) #id:1a
+	NPC_chiaki_chara: Drink this potion. It will stabilize your soul and allow people to see you. #id:1b
+	Ghost_character: Will this really work? #id:1c
+	NPC_chiaki_chara: I promise, it will let you rejoin this world. #id:1d
+	- Drink the potion [if {choice} == "y"]
 		Ghost_character: I feel different, like I’m more… real #id:1f
 		NPC_chiaki_chara: Cool. Now, you’ll be visible to everyone. #id:20
 		NPC_chiaki_chara: You can go into town, talk to people, and search for your past. #id:21
@@ -33,7 +22,38 @@ NPC_chiaki_chara: I promise, it will let you rejoin this world. #id:1d
 		NPC_chiaki_chara: But facing them is a crucial step in discovering who you really are. #id:24
 		Ghost_character: I understand. No matter how painful, I need to find my memories. #id:25
 		NPC_chiaki_chara: Then go ahead. I’ll be here if you ever need help. #id:3c
-set {task} = "To Be Continue…"
-[signal arg="activate_something"]
-
-[end_timeline]
+	- Do not drink the potion [if {entity_} == "n"]
+		Ghost_character: Well... I have no choice. This is the only way to continue...
+		- Drink the potion [if {entity_} == "n"]
+			Ghost_character: I feel different, like I’m more… real #id:1f
+			NPC_chiaki_chara: Cool. Now, you’ll be visible to everyone. #id:20
+			NPC_chiaki_chara: You can go into town, talk to people, and search for your past. #id:21
+			Ghost_character: Amazing! I can finally find out who I am! #id:22
+			NPC_chiaki_chara: Remember, some of your memories might be painful. #id:23
+			NPC_chiaki_chara: But facing them is a crucial step in discovering who you really are. #id:24
+			Ghost_character: I understand. No matter how painful, I need to find my memories. #id:25
+			NPC_chiaki_chara: Then go ahead. I’ll be here if you ever need help. #id:3c
+	set {conv_chiaki} += 1
+	
+	[end_timeline]
+if {conv_chiaki} == 1:
+	NPC_chiaki_chara: what do you want to ask?
+	label return_to_option
+	- where can i find my memories? [if {ques_.opt_1} == false][else="hide"]
+		Ghost_character: I want to know where can i find my memory.
+		set {ques_.opt_1} = true
+		jump return_to_option
+	- why you know me [if {ques_.opt_2} == false][else="hide"]
+		Ghost_character: I mean, why 
+		set {ques_.opt_2} = true
+		jump return_to_option
+	- what is the lab [if {ques_.opt_1} == true][else="hide"]
+		what is the lab
+		[signal arg="activate_something"]
+		set {task} = "“find the lab ”"
+		set {ques_.opt_3} = true
+		jump return_to_option
+	- no more questions [if {conv_chiaki} != 0][else="hide"]
+		1234
+		set {conv_chiaki} += 1
+		[end_timeline]

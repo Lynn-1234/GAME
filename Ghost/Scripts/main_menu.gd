@@ -17,6 +17,5 @@ func _on_start_button_pressed():
 	#get_tree().change_scene_to_file("res://Scripts/main.tscn")
 	ScenceChange.switch_scene("res://Scripts/intro.tscn")
 
-
-func _on_quite_button_pressed():
+func _on_quit_button_pressed():
 	get_tree().quit()

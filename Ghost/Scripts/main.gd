@@ -15,6 +15,7 @@ func _ready():
 func _process(delta):
 	if Globals.is_first_time:
 		if IsDialog:
+			Globals.can_move = false 
 			if Dialogic.current_timeline != null:
 				return
 			Dialogic.timeline_ended.connect(_on_timeline_ended)
@@ -26,4 +27,5 @@ func _process(delta):
 
 func _on_timeline_ended():
 	IsDialog = false
+	Globals.can_move = true
 

@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://c8kmtmc5pxv5o" path="res://map/house+map.png" id="1_2kmci"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bcei2"]
-size = Vector2(29, 21)
+size = Vector2(29, 10.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cpsr2"]
-size = Vector2(51, 25)
+size = Vector2(177, 76.75)
 
 [node name="House" type="StaticBody2D"]
 position = Vector2(8, -11)
@@ -23,14 +23,14 @@ polygon = PackedVector2Array(-6, -44, -33, -25, -44, -16, -54, -6, -57, 0, -56, 
 [node name="door" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door"]
-position = Vector2(-3.5, 54.5)
+position = Vector2(-4, 61)
 shape = SubResource("RectangleShape2D_bcei2")
 debug_color = Color(0.964706, 0, 0.490196, 0.419608)
 
 [node name="PlayerPosition" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerPosition"]
-position = Vector2(-4.5, 68)
+position = Vector2(-3, 71)
 shape = SubResource("RectangleShape2D_cpsr2")
 
 [connection signal="body_entered" from="door" to="." method="_on_door_body_entered"]

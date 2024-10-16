@@ -10,7 +10,7 @@
 y_sort_enabled = true
 script = ExtResource("1_56hi3")
 
-[node name="Player" parent="." instance=ExtResource("1_1747h")]
+[node name="Player" parent="." groups=["Persist"] instance=ExtResource("1_1747h")]
 position = Vector2(1730, 986)
 
 [node name="TileMap" parent="." instance=ExtResource("2_710vg")]
@@ -18,7 +18,7 @@ z_index = -1
 y_sort_enabled = true
 
 [node name="House" parent="." instance=ExtResource("3_qxf8a")]
-position = Vector2(2541, 1627)
+position = Vector2(2536, 1624)
 scale = Vector2(3, 3)
 
 [node name="npc_2" parent="." instance=ExtResource("5_dof7s")]

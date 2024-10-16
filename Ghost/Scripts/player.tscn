@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://mf4u4odv0dlc"]
+[gd_scene load_steps=21 format=3 uid="uid://mf4u4odv0dlc"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_2pujv"]
 [ext_resource type="Texture2D" uid="uid://c7i5qd50kfy0u" path="res://character/Ghost/ghost00.png" id="2_2gnb1"]
@@ -6,6 +6,15 @@
 [ext_resource type="Texture2D" uid="uid://cghib445tshlv" path="res://character/Ghost/ghost02.png" id="4_dpefy"]
 [ext_resource type="Texture2D" uid="uid://cp7roa0vvx0nh" path="res://character/Ghost/ghost03.png" id="5_2m2dn"]
 [ext_resource type="FontFile" uid="uid://6tmaq1sdhrxf" path="res://Fonts/Anton-Regular.ttf" id="7_lwht4"]
+[ext_resource type="Texture2D" uid="uid://dkvquf5atbjhq" path="res://settingpage/background.PNG" id="7_oa5ft"]
+[ext_resource type="Script" path="res://Scripts/Settingpage.gd" id="7_s138k"]
+[ext_resource type="Texture2D" uid="uid://c8lpbebj5bjiy" path="res://settingpage/SETTINGS.PNG" id="8_nri0y"]
+[ext_resource type="Texture2D" uid="uid://bsl228qldftgl" path="res://settingpage/quit.PNG" id="9_t7017"]
+[ext_resource type="Texture2D" uid="uid://cjngouxl6ov40" path="res://settingpage/back to main menu.PNG" id="10_6nol3"]
+[ext_resource type="Texture2D" uid="uid://vgjfqa3w3lj0" path="res://settingpage/guide.PNG" id="11_6v67d"]
+[ext_resource type="Texture2D" uid="uid://7yfr3ixjlmbp" path="res://settingpage/back to game.PNG" id="12_ceuj2"]
+[ext_resource type="Texture2D" uid="uid://nko244rwcvpl" path="res://settingpage/GUIDEpage.png" id="14_jvea4"]
+[ext_resource type="Texture2D" uid="uid://ctrqm73e16sfn" path="res://settingpage/Close.png" id="15_leim8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_iqdyl"]
 resource_local_to_scene = true
@@ -54,6 +63,11 @@ func _on_dialogic_signal(argument:String):
 		$Message.show()
 
 
+
+
+func _on_setting_pressed():
+	get_tree()
+	pass
 "
 
 [sub_resource type="LabelSettings" id="LabelSettings_lwuff"]
@@ -61,6 +75,20 @@ font = ExtResource("7_lwht4")
 font_size = 20
 outline_size = 3
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="GDScript" id="GDScript_8wklo"]
+script/source = "extends Sprite2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(2.08165e-12, 0)
@@ -91,3 +119,99 @@ text = "
 "
 label_settings = SubResource("LabelSettings_lwuff")
 metadata/_edit_use_anchors_ = true
+
+[node name="Settingpage" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("7_s138k")
+metadata/_edit_use_anchors_ = true
+
+[node name="background" type="Sprite2D" parent="Settingpage"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("7_oa5ft")
+
+[node name="title_settings" type="Sprite2D" parent="Settingpage"]
+position = Vector2(-1.04082e-12, -16)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("8_nri0y")
+
+[node name="Quit" type="Button" parent="Settingpage"]
+custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.009
+anchor_right = -0.009
+offset_left = -33.64
+offset_top = 74.5
+offset_right = 235.36
+offset_bottom = 214.5
+scale = Vector2(0.25, 0.25)
+icon = ExtResource("9_t7017")
+metadata/_edit_use_anchors_ = true
+
+[node name="BackToMainMenu" type="Button" parent="Settingpage"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.025
+anchor_top = 0.1
+anchor_right = 0.025
+anchor_bottom = 0.1
+offset_left = -113.5
+offset_top = -21.0
+offset_right = 794.5
+offset_bottom = 134.0
+scale = Vector2(0.25, 0.25)
+icon = ExtResource("10_6nol3")
+metadata/_edit_use_anchors_ = true
+
+[node name="GuideButton" type="Button" parent="Settingpage"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.00600004
+anchor_top = 0.075
+anchor_right = -0.00599976
+anchor_bottom = 0.075
+offset_left = -38.26
+offset_top = 30.5
+offset_right = 267.74
+offset_bottom = 160.5
+scale = Vector2(0.25, 0.25)
+action_mode = 0
+icon = ExtResource("11_6v67d")
+metadata/_edit_use_anchors_ = true
+
+[node name="BackToGame" type="Button" parent="Settingpage"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0125
+anchor_top = 0.1125
+anchor_right = -0.0125
+anchor_bottom = 0.1125
+offset_left = -83.5
+offset_top = -69.0
+offset_right = 595.5
+offset_bottom = 73.0
+scale = Vector2(0.25, 0.25)
+icon = ExtResource("12_ceuj2")
+metadata/_edit_use_anchors_ = true
+
+[node name="GUIDE" type="Sprite2D" parent="Settingpage"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("14_jvea4")
+script = SubResource("GDScript_8wklo")
+
+[node name="CloseButton" type="Button" parent="Settingpage/GUIDE"]
+offset_left = -166.0
+offset_top = 394.0
+offset_right = 147.0
+offset_bottom = 529.0
+icon = ExtResource("15_leim8")
+
+[connection signal="pressed" from="Settingpage/Quit" to="Settingpage" method="_on_quit_pressed"]
+[connection signal="pressed" from="Settingpage/BackToMainMenu" to="Settingpage" method="_on_back_to_main_menu_pressed"]
+[connection signal="pressed" from="Settingpage/GuideButton" to="Settingpage" method="_on_guide_button_pressed"]
+[connection signal="pressed" from="Settingpage/BackToGame" to="Settingpage" method="_on_back_to_game_pressed"]
+[connection signal="pressed" from="Settingpage/GUIDE/CloseButton" to="Settingpage" method="_on_close_button_pressed"]

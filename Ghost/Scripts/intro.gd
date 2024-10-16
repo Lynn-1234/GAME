@@ -8,5 +8,5 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_pressed("dialogic_default_action"):
+	if Input.is_action_just_pressed("ui_click"):
 		ScenceChange.switch_scene("res://Scripts/main.tscn/")
