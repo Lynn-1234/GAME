@@ -23,7 +23,6 @@ func _process(delta):
 			pass
 	else : 
 		$IcoSp.visible = false
-		
 
 func _on_timeline_ended():
 	IsDialog = false

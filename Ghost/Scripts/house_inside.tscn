@@ -99,6 +99,7 @@ layer_1/tile_data = PackedInt32Array(3, 131072, 0, 65539, 131072, 1, 131075, 131
 position = Vector2(342, 442)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+visible = false
 position = Vector2(336, 283)
 
 [node name="outside" type="Area2D" parent="."]

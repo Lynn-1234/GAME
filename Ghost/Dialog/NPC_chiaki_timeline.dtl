@@ -34,26 +34,42 @@ if {conv_chiaki} == 0:
 			Ghost_character: I understand. No matter how painful, I need to find my memories. #id:25
 			NPC_chiaki_chara: Then go ahead. I’ll be here if you ever need help. #id:3c
 	set {conv_chiaki} += 1
-	
-	[end_timeline]
 if {conv_chiaki} == 1:
 	NPC_chiaki_chara: what do you want to ask?
 	label return_to_option
-	- where can i find my memories? [if {ques_.opt_1} == false][else="hide"]
-		Ghost_character: I want to know where can i find my memory.
+	- Where can i find my memories? [if {ques_.opt_1} == false][else="hide"]
+		Ghost_character: I want to know where should i go to find my memory.
+		NPC_chiaki_chara: Your memories might be hidden in a few places. One important place is the laboratory next to the village. Strange things happened there, and it might be connected to your past.
+		Ghost_character: The laboratory? What kind of place is that?
+		NPC_chiaki_chara: It used to be a place where they studied supernatural phenomena, but it’s been abandoned for years. It’s dangerous, so be cautious. Still, you might find clues about your memories there.
+		Ghost_character: I understand. I'll go check it out.
 		set {ques_.opt_1} = true
 		jump return_to_option
-	- why you know me [if {ques_.opt_2} == false][else="hide"]
-		Ghost_character: I mean, why 
+	- How do you know me? [if {ques_.opt_2} == false][else="hide"]
+		Ghost_character: I mean, how do you know me?
+		NPC_chiaki_chara: (sighs)
+		NPC_chiaki_chara: We’ve known each other for a long time, far longer than you think. Actually... I was the one who brought you back.
+		Ghost_character: Brought me back? I don’t remember ever meeting you.
+		NPC_chiaki_chara: That’s because I erased your memories. I had no other choice... your soul couldn’t stay in this world unless it was erased. 
+		NPC_chiaki_chara: I wanted you to find peace, but I couldn’t just watch you disappear.
+		Ghost_character: ……
 		set {ques_.opt_2} = true
 		jump return_to_option
-	- what is the lab [if {ques_.opt_1} == true][else="hide"]
-		what is the lab
+	- What is the lab ? [if {ques_.opt_1} == true][else="hide"]
+		Ghost_character: What is the laboratory?
+		NPC_chiaki_chara: The laboratory is a mysterious place. It used to be run by a group of scientists who studied souls and supernatural phenomena. 
+		NPC_chiaki_chara: Many secrets about souls are hidden there, and I suspect it’s closely tied to your memories.
+		Ghost_character: Why were they studying souls?
+		NPC_chiaki_chara: They were trying to find a way to control souls, even attempting to change the laws of life and death. But it was dangerous. 
+		NPC_chiaki_chara: Not only did those experiments fail, but they also brought disaster.
+		Ghost_character: So my memories are there too?
+		NPC_chiaki_chara: Most likely, yes. Your existence is closely connected to their experiments. 
+		NPC_chiaki_chara: If you want to recover your memories, that’s a place you can’t overlook.
 		[signal arg="activate_something"]
 		set {task} = "“find the lab ”"
 		set {ques_.opt_3} = true
 		jump return_to_option
 	- no more questions [if {conv_chiaki} != 0][else="hide"]
-		1234
+		Ghost_character: (Nothing to ask yet)...
 		set {conv_chiaki} += 1
 		[end_timeline]

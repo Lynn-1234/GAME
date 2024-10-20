@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://f18mscqru12h" path="res://character/Ghost/ghost01.png" id="3_b1vm0"]
 [ext_resource type="Texture2D" uid="uid://cghib445tshlv" path="res://character/Ghost/ghost02.png" id="4_dpefy"]
 [ext_resource type="Texture2D" uid="uid://cp7roa0vvx0nh" path="res://character/Ghost/ghost03.png" id="5_2m2dn"]
+[ext_resource type="Script" path="res://Scripts/Camera2D.gd" id="6_0gk0a"]
 [ext_resource type="FontFile" uid="uid://6tmaq1sdhrxf" path="res://Fonts/Anton-Regular.ttf" id="7_lwht4"]
 [ext_resource type="Texture2D" uid="uid://dkvquf5atbjhq" path="res://settingpage/background.PNG" id="7_oa5ft"]
 [ext_resource type="Script" path="res://Scripts/Settingpage.gd" id="7_s138k"]
@@ -76,20 +77,6 @@ font_size = 20
 outline_size = 3
 outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="GDScript" id="GDScript_8wklo"]
-script/source = "extends Sprite2D
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-"
-
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(2.08165e-12, 0)
 scale = Vector2(2, 2)
@@ -107,6 +94,7 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_yd6tl")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("6_0gk0a")
 
 [node name="HUD" type="CanvasLayer" parent="."]
 scale = Vector2(2, 2)
@@ -123,9 +111,11 @@ metadata/_edit_use_anchors_ = true
 [node name="Settingpage" type="Control" parent="."]
 visible = false
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("7_s138k")
 metadata/_edit_use_anchors_ = true
 
@@ -199,9 +189,9 @@ icon = ExtResource("12_ceuj2")
 metadata/_edit_use_anchors_ = true
 
 [node name="GUIDE" type="Sprite2D" parent="Settingpage"]
+visible = false
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("14_jvea4")
-script = SubResource("GDScript_8wklo")
 
 [node name="CloseButton" type="Button" parent="Settingpage/GUIDE"]
 offset_left = -166.0

@@ -17,6 +17,9 @@ func _on_back_to_main_menu_pressed():
 
 func _on_back_to_game_pressed():
 	Input.action_press("ui_settings")
+	visible = false
+	Globals.can_move = true
+	print("button pressed")
 
 func _on_guide_button_pressed():
 	$GUIDE.visible = true

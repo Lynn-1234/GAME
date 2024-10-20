@@ -11,17 +11,14 @@ func get_input():
 	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	velocity = input_dir * speed
 	if Input.is_action_just_pressed("ui_settings"):
+		print("press X")
 		toggle_settings()
-		
-	
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().quit()
 
 func toggle_settings():
-	if $Settingpage.visible :
-		$Settingpage.visible = false
-	else :
-		$Settingpage.visible = true
+	$Settingpage.visible = true
+	Globals.can_move = false
 
 func _physics_process(delta):
 	if Globals.can_move:

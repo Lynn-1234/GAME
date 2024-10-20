@@ -13,8 +13,8 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _process(delta):
 	if IsDialog:
-		Globals.can_move = false 
 		if Input.is_action_just_pressed("dialogic_default_action"):
+			Globals.can_move = false
 			if Dialogic.current_timeline != null:
 				return
 			Dialogic.timeline_ended.connect(_on_timeline_ended)
